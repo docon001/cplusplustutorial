@@ -1,6 +1,6 @@
 class Account
 {
-    protected:
+    private:
         int accountNumber;
         vector<PhoneNumber> phoneNumbers;
         string email;

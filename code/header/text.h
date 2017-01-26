@@ -2,18 +2,19 @@
 #define TEXT_H
 
 #include <string>
+#include "phone_number.h"
 
 class Text
 {
-    protected:
+    private:
         PhoneNumber sender;
         PhoneNumber receiver;
-        string message;
+        std::string message;
         
     public:
         Text();
-        Text(PhoneNumber, PhoneNumber, string);
-        string getMessage();
+        Text(PhoneNumber, PhoneNumber, std::string);
+        std::string getMessage();
         PhoneNumber getSender();
         PhoneNumber getReceiver();
 };

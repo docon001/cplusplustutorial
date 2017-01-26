@@ -60,3 +60,13 @@ void PhoneNumber::setString()
 {
     number = '(' + to_string(areaCode) + ')' + to_string(centralOfficeCode) + '-' + to_string(lineNumber);
 }
+
+bool PhoneNumber::operator==(PhoneNumber number)
+{
+    bool AC = this->getAreaCode() == number.getAreaCode();
+    bool COC = this->getCentralOfficeCode() == number.getCentralOfficeCode();
+    bool LN = this->getLineNumber() == number.getLineNumber();
+    bool str = this->getNumber() == number.getNumber();
+    
+    return (AC && COC && LN && str);
+}

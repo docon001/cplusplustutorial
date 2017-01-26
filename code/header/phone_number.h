@@ -5,7 +5,7 @@
 
 class PhoneNumber
 {
-    protected:
+    private:
         int areaCode;
         int centralOfficeCode;
         int lineNumber;
@@ -22,6 +22,7 @@ class PhoneNumber
         void setCentralOfficeCode(int);
         void setLineNumber(int);
         void setString();
+        bool operator==(PhoneNumber);
 };
 
 #endif
