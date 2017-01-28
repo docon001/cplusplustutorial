@@ -2,6 +2,7 @@
 #define TEXT_H
 
 #include <string>
+#include <ctime>
 #include "phone_number.h"
 
 class Text
@@ -10,13 +11,15 @@ class Text
         PhoneNumber sender;
         PhoneNumber receiver;
         std::string message;
+        time_t date;
         
     public:
         Text();
-        Text(PhoneNumber, PhoneNumber, std::string);
+        Text(PhoneNumber, PhoneNumber, std::string, time_t date = time(NULL));
         std::string getMessage();
         PhoneNumber getSender();
         PhoneNumber getReceiver();
+        time_t getDate();
 };
 
 #endif

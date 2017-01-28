@@ -6,7 +6,7 @@ TEST_CASE("Text Test")
 {
     PhoneNumber sender(123, 456, 7890);
     PhoneNumber receiver(714, 323, 9876);
-    Text text1(sender, receiver, "Hello World");
+    Text text1(sender, receiver, "Hello World", 54038385);
     Text text2(receiver, sender, "World Hello");
     
     SECTION("Checking for text message")
@@ -26,5 +26,11 @@ TEST_CASE("Text Test")
         INFO("Error checking the receiver");
         CHECK(text1.getReceiver() == receiver);
         CHECK(text2.getReceiver() == sender);
+    }
+    SECTION("Checking for date")
+    {
+        INFO("Error checking the date");
+        CHECK(text1.getDate() == 54038385);
+        CHECK(text2.getDate() == time(NULL));
     }
 }
