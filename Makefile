@@ -1,5 +1,5 @@
-OBJS = text_test.o phone_number_test.o call_test.o test.o \
-		text.o phone_number.o call.o 
+OBJS = text_test.o phone_number_test.o data_test.o call_test.o test.o \
+		text.o phone_number.o data.o call.o 
 CC = g++ -std=c++11
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
@@ -17,6 +17,9 @@ text_test.o: $(HEADERDIR)/phone_number.h $(HEADERDIR)/text.h $(TESTDIR)/text_tes
 phone_number_test.o: $(HEADERDIR)/phone_number.h $(TESTDIR)/phone_number_test.cpp
 	$(CC) $(CFLAGS) $(TESTDIR)/phone_number_test.cpp
 	
+data_test.o: $(HEADERDIR)/data.h $(TESTDIR)/data_test.cpp
+	$(CC) $(CFLAGS) $(TESTDIR)/data_test.cpp
+	
 call_test.o: $(HEADERDIR)/call.h $(TESTDIR)/call_test.cpp
 	$(CC) $(CFLAGS) $(TESTDIR)/call_test.cpp
 	
@@ -28,6 +31,9 @@ text.o: $(HEADERDIR)/phone_number.h $(HEADERDIR)/text.h $(SOURCEDIR)/text.cpp
 	
 phone_number.o: $(HEADERDIR)/phone_number.h $(SOURCEDIR)/phone_number.cpp
 	$(CC) $(CFLAGS) $(SOURCEDIR)/phone_number.cpp
+	
+data.o: $(HEADERDIR)/data.h $(SOURCEDIR)/data.cpp
+	$(CC) $(CFLAGS) $(SOURCEDIR)/data.cpp
 	
 call.o: $(HEADERDIR)/call.h $(SOURCEDIR)/call.cpp
 	$(CC) $(CFLAGS) $(SOURCEDIR)/call.cpp
