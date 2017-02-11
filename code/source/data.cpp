@@ -14,17 +14,17 @@ Data::Data(PhoneNumber number, long int dataUsed, time_t date)
     this->date = date;
 }
 
-time_t Data::getDate()
+time_t Data::getDate() const
 {
     return date;
 }
 
-PhoneNumber Data::getPhoneNumber()
+PhoneNumber Data::getPhoneNumber() const
 {
     return number;
 }
 
-long int Data::getDataUsed()
+long int Data::getDataUsed() const
 {
     return dataUsed;
 }
@@ -37,4 +37,13 @@ void Data::setDataUsed(long int dataUsed)
 void Data::addDataUsed(long int dataUsed)
 {
     this->dataUsed += dataUsed;
+}
+
+bool Data::operator==(Data data) const
+{
+    bool numberMatch = this->number == data.getPhoneNumber();
+    bool dataUsedMatch = this->dataUsed == data.getDataUsed();
+    bool dateMatch = this->date == data.getDate();
+    
+    return numberMatch && dataUsedMatch && dateMatch;
 }

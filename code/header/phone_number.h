@@ -14,15 +14,15 @@ class PhoneNumber
     public:
         PhoneNumber();
         PhoneNumber(int,int,int);
-        int getAreaCode();
-        int getCentralOfficeCode();
-        int getLineNumber();
-        std::string getNumber();
+        int getAreaCode() const;
+        int getCentralOfficeCode() const;
+        int getLineNumber() const;
+        std::string getNumber() const;
         void setAreaCode(int);
         void setCentralOfficeCode(int);
         void setLineNumber(int);
         void setString();
-        bool operator==(PhoneNumber);
+        bool operator==(PhoneNumber) const;
 };
 
 #endif

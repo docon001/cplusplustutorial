@@ -1,5 +1,6 @@
-OBJS = text_test.o phone_number_test.o data_test.o call_test.o test.o \
-		text.o phone_number.o data.o call.o 
+OBJS = text_test.o phone_number_test.o data_test.o call_test.o bill_test.o \
+	   test.o \
+	   text.o phone_number.o data.o call.o bill.o
 CC = g++ -std=c++11
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
@@ -23,6 +24,9 @@ data_test.o: $(HEADERDIR)/data.h $(TESTDIR)/data_test.cpp
 call_test.o: $(HEADERDIR)/call.h $(TESTDIR)/call_test.cpp
 	$(CC) $(CFLAGS) $(TESTDIR)/call_test.cpp
 	
+bill_test.o: $(HEADERDIR)/bill.h $(TESTDIR)/bill_test.cpp
+	$(CC) $(CFLAGS) $(TESTDIR)/bill_test.cpp
+	
 test.o: $(TESTDIR)/test.cpp
 	$(CC) $(CFLAGS) $(TESTDIR)/test.cpp
 	
@@ -37,6 +41,9 @@ data.o: $(HEADERDIR)/data.h $(SOURCEDIR)/data.cpp
 	
 call.o: $(HEADERDIR)/call.h $(SOURCEDIR)/call.cpp
 	$(CC) $(CFLAGS) $(SOURCEDIR)/call.cpp
+	
+bill.o: $(HEADERDIR)/bill.h $(SOURCEDIR)/bill.cpp
+	$(CC) $(CFLAGS) $(SOURCEDIR)/bill.cpp
 	
 clean:
 	\rm *.o *~ tests

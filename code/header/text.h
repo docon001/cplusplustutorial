@@ -16,10 +16,11 @@ class Text
     public:
         Text();
         Text(PhoneNumber, PhoneNumber, std::string, time_t date = time(NULL));
-        std::string getMessage();
-        PhoneNumber getSender();
-        PhoneNumber getReceiver();
-        time_t getDate();
+        std::string getMessage() const;
+        PhoneNumber getSender() const;
+        PhoneNumber getReceiver() const;
+        time_t getDate() const;
+        bool operator==(Text) const;
 };
 
 #endif

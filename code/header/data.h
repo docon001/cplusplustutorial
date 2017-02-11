@@ -13,11 +13,12 @@ class Data
     public:
         Data();
         Data(PhoneNumber, long int, time_t date = time(NULL));
-        time_t getDate();
-        PhoneNumber getPhoneNumber();
-        long int getDataUsed();
+        time_t getDate() const;
+        PhoneNumber getPhoneNumber() const;
+        long int getDataUsed() const;
         void setDataUsed(long int);
         void addDataUsed(long int);
+        bool operator==(Data) const;
 };
 
 #endif

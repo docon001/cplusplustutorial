@@ -15,11 +15,11 @@ class Call
     public:
         Call();
         Call(PhoneNumber, PhoneNumber, int, time_t date = time(NULL));
-        PhoneNumber getCaller();
-        PhoneNumber getReceiver();
-        int getDuration();
-        time_t getDate();
-        bool operator==(Call);
+        PhoneNumber getCaller() const;
+        PhoneNumber getReceiver() const;
+        int getDuration() const;
+        time_t getDate() const;
+        bool operator==(Call) const;
 };
 
 #endif

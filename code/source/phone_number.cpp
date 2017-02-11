@@ -18,22 +18,22 @@ PhoneNumber::PhoneNumber(int areaCode, int centralOfficeCode, int lineNumber)
     setString();
 }
 
-int PhoneNumber::getAreaCode()
+int PhoneNumber::getAreaCode() const
 {
     return areaCode;
 }
 
-int PhoneNumber::getCentralOfficeCode()
+int PhoneNumber::getCentralOfficeCode() const
 {
     return centralOfficeCode;
 }
 
-int PhoneNumber::getLineNumber()
+int PhoneNumber::getLineNumber() const
 {
     return lineNumber;
 }
 
-string PhoneNumber::getNumber()
+string PhoneNumber::getNumber() const
 {
     return number;
 }
@@ -61,7 +61,7 @@ void PhoneNumber::setString()
     number = '(' + to_string(areaCode) + ')' + to_string(centralOfficeCode) + '-' + to_string(lineNumber);
 }
 
-bool PhoneNumber::operator==(PhoneNumber number)
+bool PhoneNumber::operator==(PhoneNumber number) const
 {
     bool AC = this->getAreaCode() == number.getAreaCode();
     bool COC = this->getCentralOfficeCode() == number.getCentralOfficeCode();
